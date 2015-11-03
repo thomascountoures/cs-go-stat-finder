@@ -7,10 +7,17 @@ var HomeCtrl = function(player) {
 
 	function searchPlayer() {
 		player.getPlayers(that.search)
-		.then(function(response) {		
-			that.players = response;
+		.then(function(response) {
+			that.player = response;
+			//that.players = response;		
 		}, function(err, status) {
-			that.players = "Error, could not retrieve teams. Error was: " + err;
+			that.player = "Error, could not retrieve teams. Error was: " + err;
+		})
+		.then(function(results) {
+			player.getStats(that.search)
+			.then(function(response) {				
+				that.stats = response;			
+			});
 		});
 	}
 
