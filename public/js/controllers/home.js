@@ -3,10 +3,10 @@
 
 var HomeCtrl = function(player) {
 	// scope this for inner function contexts
-	var that = this;	
+	var that = this;
 
 	function searchPlayer() {
-		player.getPlayers()
+		player.getPlayers(that.search)
 		.then(function(response) {		
 			that.players = response;
 		}, function(err, status) {

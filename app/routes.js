@@ -3,11 +3,11 @@ module.exports = function(app, express, router, requestify) {
 
 	// server routes ================================
 	app.use(router);
-	router.get('/players', function(req, res) {
-		//res.send("getting players!");
+	router.get('/players/:id', function(req, res) {
+		var id = req.params.id;
 		var data;
 		requestify
-			.get('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=72793006155C403B2A5F7C0451CA1F29&steamids=76561197960435530')
+			.get('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=72793006155C403B2A5F7C0451CA1F29&steamids=' + id)
 			.then(function(response) {
 				data = response.getBody();
 				console.dir(data.response.players);	

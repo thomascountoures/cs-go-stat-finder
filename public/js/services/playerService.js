@@ -7,11 +7,11 @@ var PlayerService = function($q, $http) {
 
 	players.playersList = {};
 
-	players.getPlayers = function() {
+	players.getPlayers = function(id) {
 		var deferred = $q.defer();
 
 		$http
-		.get('/players')
+		.get('/players/' + id)
 		.success(function(response) {
 			console.log("playerlist: " + response);			
 			players.playersList = response;
