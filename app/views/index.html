@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="battlefy">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+		<title>Stats</title>		
+	</head>
+	<body>
+		<ng-include src="'/public/partials/nav.html'"></ng-include>
+		<div class="container">
+			<!-- main UI view -->	
+			<div ui-view></div>
+		</div>
+	<!-- external libraries -->
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	<!-- global config -->
+	<script src="/public/js/app.js"></script>
+
+	<!-- services -->
+	<script src="/public/js/services/playerService.js"></script>	
+
+	<!-- controllers -->
+	<script src="/public/js/controllers/home.js"></script>
+
+	</body>	
+</html>
