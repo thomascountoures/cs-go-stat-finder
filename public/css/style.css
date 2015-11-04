@@ -11,12 +11,60 @@
   src: url("/public/fonts/kelson_sans_regular-webfont.eot?#iefix") format("embedded-opentype"), url("/public/fonts/kelson_sans_regular-webfont.woff2") format("woff2"), url("/public/fonts/kelson_sans_regular-webfont.woff") format("woff"), url("/public/fonts/kelson_sans_regular-webfont.ttf") format("truetype"), url("/public/fonts/kelson_sans_regular-webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 .bold {
-  font-family: 'kelson-bold'; }
+  font-family: 'kelson-bold';
+  display: block;
+  color: #fff;
+  font-size: 25px; }
+
+h2 {
+  font-size: 17px;
+  margin: 10px 0;
+  color: #E3AE57; }
+
+.relative {
+  position: relative; }
+
+.center {
+  text-align: center; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+.link {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #fff; }
+  .link:hover {
+    color: #E3AE57;
+    text-decoration: none; }
+
+.fa-crosshairs,
+.fa-clock-o,
+.fa-frown-o,
+.fa-heart,
+.fa-bomb,
+.fa-money,
+.fa-trophy,
+.fa-shield {
+  position: absolute;
+  left: 0;
+  top: 0; }
 
 body {
   background-color: #232B2B;
   font-family: 'kelson-light', Arial, sans-serif;
   color: #fff; }
+
+.noStats {
+  text-align: center;
+  font-size: 2em;
+  margin: 40px auto; }
+
+.topStat {
+  position: relative;
+  left: 50px; }
 
 .dashboard.navbar {
   color: #fff; }
@@ -74,18 +122,56 @@ body {
   border: 0;
   padding: 10px 14px;
   position: relative;
+  width: 50%;
   text-align: center; }
 .searchPlayer .inputs {
   text-align: center; }
 
-.avatar {
-  width: 130px;
-  height: 130px; }
-  .avatar img {
-    max-width: 100%;
-    height: 100%; }
+.enterName {
+  position: relative;
+  left: -15px;
+  margin-top: 20px; }
+
+.profileHeader,
+.chartHeader {
+  background: rgba(68, 68, 68, 0.4);
+  margin: 50px 0; }
+  .profileHeader .avatar,
+  .chartHeader .avatar {
+    width: 130px;
+    height: 130px;
+    margin-right: 10px; }
+    .profileHeader .avatar img,
+    .chartHeader .avatar img {
+      max-width: 100%;
+      height: 100%; }
+
+.favouriteWeapon {
+  text-transform: uppercase; }
+
+.chartHeader {
+  padding: 40px 10px;
+  text-align: center; }
+
+#barChart {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px; }
 
 #myChart {
   float: right; }
+
+.recentlyViewed ul {
+  padding-left: 0; }
+  .recentlyViewed ul li {
+    list-style: none;
+    display: inline-block;
+    width: 25%;
+    padding: 22px; }
+    .recentlyViewed ul li a {
+      color: #fff;
+      display: block; }
+      .recentlyViewed ul li a.playerName {
+        font-size: 16px; }
 
 /*# sourceMappingURL=style.css.map */

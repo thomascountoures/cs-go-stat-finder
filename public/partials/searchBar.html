@@ -1,7 +1,10 @@
-<form ng-submit="home.searchPlayer()" method="GET" class="searchPlayer">
-	<fieldset class="inputs">
-		<span class="wrapper"><input id="search" type="text" placeholder="Search player" ng-model="home.search"/><i class="fa fa-search fa-3x"></i></span>
-		<!--<input type="submit" value="search" />-->
-	</fieldset>
-</form>
-
+<section>
+	<form ng-submit="home.constructPlayer()" method="GET" class="searchPlayer">
+		<fieldset class="inputs">
+			<span class="wrapper"><input id="search" type="text" placeholder="Enter Username or Steam ID" ng-model="home.search"/><i class="fa fa-search fa-3x"></i></span>
+			<!--<input type="submit" value="search" />-->
+		</fieldset>
+	</form>
+	<p class="center enterName">Enter username (eg. h00stra, hazies) or 64 bit steam ID (eg. 76561197993178929 <i class="fa fa-smile-o"></i>)</p>
+	<p class="noStats" ng-show="home.stats.noStatsFound">Sorry, this user has no data recorded for CS GO.</p>
+</section>

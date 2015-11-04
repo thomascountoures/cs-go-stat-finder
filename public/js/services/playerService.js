@@ -4,9 +4,21 @@
 var PlayerService = function($q, $http) {
 
 	var players = this;
+	
+	players.resolveVanityUrl = function(username) {
+		var deferred = $q.defer();
 
-	players.playersList = {};
-	players.statsList = {};
+		$http
+		.get('/getSteamID/' + username)
+		.success(function(steamID) {
+			deferred.resolve(steamID);
+		}, function(err, status) {
+			deferred.reject(err);
+		})
+
+
+		return deferred.promise;
+	};
 
 	players.getPlayers = function(id) {
 		var deferred = $q.defer();
@@ -22,9 +34,9 @@ var PlayerService = function($q, $http) {
 		
 
 		return deferred.promise;
-	}
+	};
 
-	players.getWantedStats = function(id) {
+	players.getStats = function(id) {
 		var deferred = $q.defer();
 
 		$http
@@ -40,9 +52,9 @@ var PlayerService = function($q, $http) {
 				var currentStatName  = stats[i].name,
 					currentStatValue = stats[i].value;										
 
-				if(wanted_stats.indexOf(currentStatName) !== -1) {					
+				//if(wanted_stats.indexOf(currentStatName) !== -1) {					
 					newStats[currentStatName] = currentStatValue;					
-				}
+				//}
 			}
 						
 			deferred.resolve(newStats);
@@ -52,7 +64,7 @@ var PlayerService = function($q, $http) {
 		});
 
 		return deferred.promise;
-	},
+	};
 
 	players.getFavouriteWeapon = function(id) {
 		
@@ -63,7 +75,9 @@ var PlayerService = function($q, $http) {
 		.success(function(stats) {					
 			if(stats instanceof Array) {
 				var highest = 0,
-					bestWeapon;
+					weaponList = [],					
+					bestWeapon,
+					sendBack = [];
 
 				angular.forEach(stats, function(value, i) {					
 					var obj = value;
@@ -74,7 +88,11 @@ var PlayerService = function($q, $http) {
 								kills  = obj.value,
 								unwanted = ['against', 'enemy', 'headshot'];							
 							//need extra _ so I don't get total kills proper							
-							if(weapon.indexOf('total_kills_') !== -1 && !weapon.match(/(against|enemy|headshot)/)) {								
+							if(weapon.indexOf('total_kills_') !== -1 && !weapon.match(/(against|enemy|headshot)/)) {
+								weaponList.push({
+									weapon: weapon,
+									kills: kills
+								});
 								if(kills > highest) {
 									highest = kills;
 									bestWeapon = weapon.slice(12);									
@@ -84,8 +102,8 @@ var PlayerService = function($q, $http) {
 						}
 					}
 				});
-				
-				deferred.resolve(bestWeapon);
+				Array.prototype.push.apply(sendBack, [bestWeapon, weaponList]);
+				deferred.resolve(sendBack);
 
 			} else {
 				deferred.reject();
@@ -95,6 +113,47 @@ var PlayerService = function($q, $http) {
 
 		return deferred.promise;
 
+	};
+
+	players.getTimePlayed = function(seconds) {		
+		var hours   = parseInt(seconds / 3600),
+			minutes = parseInt(seconds / 60) % 60,
+			seconds = seconds % 60;
+
+		return (hours < 10 ? "0" + hours : hours) 
+				 + "h" + (minutes < 10 ? "0" + minutes : minutes) 
+				 + "m";
+	};
+
+	players.addRecentlyViewed = function(user) {
+		// send back user object and save in database
+		var deferred = $q.defer();				
+		
+		$http
+		.post('/api/recentPlayers', user)
+		.success(function(response) {
+			deferred.resolve(response);
+		}, function(err, status) {
+			deferred.reject(err);
+		});
+
+
+		return deferred.promise;
+
+	};
+
+	players.getRecentlyViewed = function() {
+		var deferred = $q.defer();
+
+		$http
+		.get('/api/recentPlayers')
+		.success(function(response) {			
+			deferred.resolve(response);
+		}, function(err, status) {
+			deferred.reject(err);
+		});
+
+		return deferred.promise;
 	}
 
 	return players;

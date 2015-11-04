@@ -4,6 +4,7 @@ $red: #DC3D24;
 $white: #fff;
 $beige: #E3AE57;
 $green: #00FF8B;
+$gray: #444;
 
 // fonts
 @font-face {
@@ -25,19 +26,6 @@ $green: #00FF8B;
        url('/public/fonts/kelson_sans_regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
-//object oriented
-.bold {
-	font-family:'kelson-bold';
-}
-
-body {
-	background-color:$black;
-	font-family:'kelson-light', Arial, sans-serif;
-	color:$white;
-}
-
-
-
 // mixins
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -56,6 +44,67 @@ body {
 	   -moz-transition: $prop $time $type;
 	    -ms-transition: $prop $time $type;
 	        transition: $prop $time $type;
+}
+
+//object oriented
+.bold {
+	font-family:'kelson-bold';
+	display:block;
+	color:$white;
+	font-size:25px;
+}
+h2 {
+	font-size:17px;
+	margin:10px 0;
+	color:$beige;
+}
+.relative {
+	position:relative;
+}
+.center {
+	text-align:center;
+}
+.mb20 {
+	margin-bottom:20px;
+}
+.link {
+	@include transition(all, 0.2s, ease-in-out);
+	color:$white;
+	&:hover {
+		color:$beige;
+		text-decoration: none;
+	}
+}
+
+//icons
+.fa-crosshairs,
+.fa-clock-o,
+.fa-frown-o,
+.fa-heart,
+.fa-bomb,
+.fa-money,
+.fa-trophy,
+.fa-shield {    
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+body {
+	background-color:$black;
+	font-family:'kelson-light', Arial, sans-serif;
+	color:$white;
+}
+
+.noStats {
+	text-align: center;
+    font-size: 2em;
+    margin: 40px auto;
+}
+
+.topStat {
+	position:relative;
+	left:50px;
 }
 
 //navbar
@@ -122,7 +171,8 @@ body {
 		border:0;
 		padding:10px 14px;
 		position:relative;
-		text-align: center;
+		width:50%;
+		text-align: center;	
 
 	}
 	.inputs {
@@ -130,18 +180,75 @@ body {
 	}	
 }
 
-// player avatar
-.avatar {
-	width:130px;
-	height:130px;
-	img {
-		max-width:100%;
-		height:100%;
+.enterName {
+	position:relative;
+	left:-15px;
+	margin-top:20px;
+}
+
+// profile header
+
+.profileHeader,
+.chartHeader {
+	background:rgba(68, 68, 68, 0.4);
+	margin:50px 0;
+	// player avatar
+	.avatar {
+		width:130px;
+		height:130px;
+		margin-right:10px;
+		img {
+			max-width:100%;
+			height:100%;
+		}
 	}
 }
 
-// chart
-#myChart {
-	float:right;
+.favouriteWeapon {
+	text-transform:uppercase;
 }
+
+// chart
+
+.chartHeader {
+	padding:40px 10px;
+	text-align:center;
+}
+
+#barChart {
+	width:100%;
+	height:100%;
+	margin-top:20px;
+}
+
+#myChart {
+	float:right;	
+}
+
+
+// recently viewed
+.recentlyViewed {
+	ul {
+		padding-left:0;
+		li {
+			list-style:none;
+			display:inline-block;
+			width:25%;
+			padding:22px;
+			a {				
+				color:$white;
+				display:block;
+				&.playerName {					
+					font-size:16px;					
+				}								
+			}
+			
+		}
+	}
+		
+}
+
+
+
+
 

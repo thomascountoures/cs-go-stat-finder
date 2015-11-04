@@ -1,0 +1,46 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="row">			
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="relative">					
+				<i class="fa fa-crosshairs fa-3x"></i>
+				<h2 class="topStat">Total Kills <span class="bold">{{stats.total_kills}}</span></h2>						
+			</div>
+			<div class="relative">
+				<i class="fa fa-frown-o fa-3x"></i>
+				<h2 class="topStat">Total Deaths <span class="bold">{{stats.total_deaths}}</span></h2>
+			</div>
+			<div class="relative">
+				<i class="fa fa-bomb fa-3x"></i>
+				<h2 class="topStat">Total Damage Done <span class="bold">{{stats.total_damage_done}}</span></h2>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="relative">
+				<i class="fa fa-heart fa-3x"></i>
+				<h2 class="topStat">Favourite Weapon <span class="bold favouriteWeapon">{{weapon}}</span></h2>
+			</div>
+			<div class="relative">
+				<i class="fa fa-clock-o fa-3x"></i>
+				<h2 class="topStat">Total Time Played <span class="bold">{{time}}</span></h2>
+			</div>
+			<div class="relative">
+				<i class="fa fa-money fa-3x"></i>
+				<h2 class="topStat">Total Money Earned <span class="bold favouriteWeapon">{{stats.total_money_earned | currency:undefined:0}}</span></h2>
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="relative">
+				<i class="fa fa-trophy fa-3x"></i>
+				<h2 class="topStat">Total Round Wins <span class="bold favouriteWeapon">{{stats.total_wins}}</span></h2>
+			</div>
+			<div class="relative">
+				<i class="fa fa-shield fa-3x"></i>
+				<h2 class="topStat">MVPs Earned <span class="bold">{{stats.total_mvps}}</span></h2>
+			</div>
+			<div class="relative">
+				<i class="fa fa-crosshairs fa-3x"></i>
+				<h2 class="topStat">Last Match Kills <span class="bold favouriteWeapon">{{stats.last_match_kills}}</span></h2>
+			</div>
+		</div>				
+	</div>				
+</div>

@@ -7,7 +7,7 @@ module.exports = function(app, express, router, requestify) {
 		var data;
 		requestify
 			.get('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=72793006155C403B2A5F7C0451CA1F29&steamids=' + req.params.id)
-			.then(function(response) {
+			.then(function(response) {				
 				data = response.getBody();								
 				res.send(data.response.players);
 				next();
@@ -23,7 +23,26 @@ module.exports = function(app, express, router, requestify) {
 				//data.append(stats.gameName);
 				res.send(stats.playerstats.stats);
 			});
-	})	
+	});
+
+	router.post('/players/recentlyViewed', function(req, res, next) {
+		var Player = require('./models/players');
+		var p1 = new Player(req.body);
+		p1.save(function(err, result) {
+			res.json(result);			
+		})
+		next();
+	});
+
+	router.get('/getSteamID/:username', function(req, res) {
+		requestify
+			.get('http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=72793006155C403B2A5F7C0451CA1F29&vanityurl=' + req.params.username)
+			.then(function(response) {
+				var result = response.getBody();
+				console.dir(result.response.steamid);
+				res.send(result.response.steamid);
+			})
+	});
 
 	app.use('/api', require('./api'));
 	

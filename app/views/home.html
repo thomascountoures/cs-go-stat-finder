@@ -1,6 +1,19 @@
 <!-- search bar -->
-<search-bar></search-bar>
-<p>76561197960435530</p>
-<p>76561197972495328</p>
+<ng-include src="'/public/partials/searchBar.html'"></ng-include>
+
 <!-- player stats -->
-<player-stats></player-stats>
+<div ng-show="home.stats.total_kills">
+
+	<!-- player name, profile link -->
+	<ng-include src="'/public/partials/playerHeader.html'"></ng-include>
+
+	<!-- player main stats -->
+	<player-main-data weapon="home.favouriteWeapon" stats="home.stats" time="home.timePlayed"></player-main-data>
+
+	<!-- player graphs -->
+	<ng-include src="'/public/partials/playerGraphs.html'"></ng-include>
+
+	<!-- recently viewed -->
+	<recently-viewed players="home.recentlyViewed"></recently-viewed>
+
+</div>
