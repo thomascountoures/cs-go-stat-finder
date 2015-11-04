@@ -1,0 +1,52 @@
+<div ng-show="home.players.personaname">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-6">
+					<header>
+						<h1 class="bold">{{home.players.personaname}}</h1>
+					</header>
+					<h2>{{home.players.realname}}</h2>
+					</div>
+					<div class="col-md-6">
+						<figure class="avatar">
+							<img ng-src="{{home.players.avatar}}" />
+						</figure>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+			<h2>Favourite Weapon: <span class="bold">{{home.favouriteWeapon}}</span></h2>			
+			</div>
+			<div class="col-md-4">
+				<canvas id="myChart" width="200" height="200"></canvas>
+			</div>
+		</div>		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Total Kills</th>
+					<th>Total Deaths</th>
+					<th>Total Wins</th>
+					<th>Total Damage Done</th>
+					<th>Total Money Earned</th>
+					<th>Total Kills with a Knife</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{home.stats.total_kills}}</td>
+					<td>{{home.stats.total_deaths}}</td>
+					<td>{{home.stats.total_wins}}</td>
+					<td>{{home.stats.total_damage_done}}</td>
+					<td>{{home.stats.total_money_earned}}</td>
+					<td>{{home.stats.total_kills_knife}}</td>
+				</tr>
+				<tr ng-show="home.noStats == true">
+					<td>{{home.stats.message}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

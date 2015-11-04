@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'kelson-bold';
+  src: url("/public/fonts/kelson_sans_bold-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/public/fonts/kelson_sans_bold-webfont.eot?#iefix") format("embedded-opentype"), url("/public/fonts/kelson_sans_bold-webfont.woff2") format("woff2"), url("/public/fonts/kelson_sans_bold-webfont.woff") format("woff"), url("/public/fonts/kelson_sans_bold-webfont.ttf") format("truetype"), url("/public/fonts/kelson_sans_bold-webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+@font-face {
+  font-family: 'kelson-light';
+  src: url("/public/fonts/kelson_sans_regular-webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("/public/fonts/kelson_sans_regular-webfont.eot?#iefix") format("embedded-opentype"), url("/public/fonts/kelson_sans_regular-webfont.woff2") format("woff2"), url("/public/fonts/kelson_sans_regular-webfont.woff") format("woff"), url("/public/fonts/kelson_sans_regular-webfont.ttf") format("truetype"), url("/public/fonts/kelson_sans_regular-webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+.bold {
+  font-family: 'kelson-bold'; }
+
+body {
+  background-color: #232B2B;
+  font-family: 'kelson-light', Arial, sans-serif;
+  color: #fff; }
+
+.dashboard.navbar {
+  color: #fff; }
+  .dashboard.navbar ul {
+    padding: 0;
+    list-style: none; }
+    .dashboard.navbar ul li {
+      text-decoration: none;
+      display: inline-block; }
+  .dashboard.navbar a {
+    color: #fff; }
+  .dashboard.navbar .project-title {
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'kelson-bold', Arial, sans-serif;
+    -webkit-box-shadow: 0 1px 2px 1px #232B2B;
+    -moz-box-shadow: 0 1px 2px 1px #232B2B;
+    -ms-box-shadow: 0 1px 2px 1px #232B2B;
+    box-shadow: 0 1px 2px 1px #232B2B; }
+    .dashboard.navbar .project-title a {
+      font-size: 40px;
+      display: inline-block;
+      margin: 0 auto;
+      color: #DC3D24; }
+
+::-webkit-input-placeholder {
+  color: #fff; }
+
+:-moz-placeholder {
+  color: #fff; }
+
+::-moz-placeholder {
+  color: #fff; }
+
+:-ms-input-placeholder {
+  color: #fff; }
+
+.searchPlayer input {
+  font-family: 'FontAwesome'; }
+.searchPlayer .wrapper {
+  position: relative; }
+  .searchPlayer .wrapper i {
+    position: relative;
+    right: -10px;
+    z-index: 1;
+    color: #fff;
+    top: 8px; }
+.searchPlayer #search {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #E3AE57;
+  color: #fff;
+  border: 0;
+  padding: 10px 14px;
+  position: relative;
+  text-align: center; }
+.searchPlayer .inputs {
+  text-align: center; }
+
+.avatar {
+  width: 130px;
+  height: 130px; }
+  .avatar img {
+    max-width: 100%;
+    height: 100%; }
+
+#myChart {
+  float: right; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,147 @@
+// color scheme
+$black: #232B2B;
+$red: #DC3D24;
+$white: #fff;
+$beige: #E3AE57;
+$green: #00FF8B;
+
+// fonts
+@font-face {
+  font-family: 'kelson-bold';
+  src: url('/public/fonts/kelson_sans_bold-webfont.eot'); /* IE9 Compat Modes */
+  src: url('/public/fonts/kelson_sans_bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/public/fonts/kelson_sans_bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/public/fonts/kelson_sans_bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/public/fonts/kelson_sans_bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/public/fonts/kelson_sans_bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'kelson-light';
+  src: url('/public/fonts/kelson_sans_regular-webfont.eot'); /* IE9 Compat Modes */
+  src: url('/public/fonts/kelson_sans_regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/public/fonts/kelson_sans_regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/public/fonts/kelson_sans_regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/public/fonts/kelson_sans_regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/public/fonts/kelson_sans_regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+//object oriented
+.bold {
+	font-family:'kelson-bold';
+}
+
+body {
+	background-color:$black;
+	font-family:'kelson-light', Arial, sans-serif;
+	color:$white;
+}
+
+
+
+// mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+	-webkit-box-shadow: $x $y $blur $spread $color;
+	   -moz-box-shadow: $x $y $blur $spread $color;
+		-ms-box-shadow: $x $y $blur $spread $color;
+			box-shadow: $x $y $blur $spread $color;
+}
+@mixin transition($prop, $time, $type) {
+	-webkit-transition: $prop $time $type;
+	   -moz-transition: $prop $time $type;
+	    -ms-transition: $prop $time $type;
+	        transition: $prop $time $type;
+}
+
+//navbar
+.dashboard.navbar {	
+	color:$white;
+	ul {
+		padding:0;
+		list-style:none;
+		li {
+			text-decoration:none;
+			display:inline-block;			
+		}
+	}
+	a {
+		color:$white;
+	}
+	.project-title {
+		padding-top:10px;
+		text-align:center;
+		font-family:'kelson-bold', Arial, sans-serif;
+		@include box-shadow(0, 1px, 2px, 1px, $black);
+		a {
+			font-size:40px;
+			display:inline-block;
+			margin:0 auto;
+			color:$red;			
+		}
+	}
+}
+
+//input placeholder colours
+::-webkit-input-placeholder {
+   color: $white;
+}
+:-moz-placeholder { 
+   color: $white;  
+}
+::-moz-placeholder {  
+   color: $white;
+}
+:-ms-input-placeholder {  
+   color: $white;
+}
+
+// search bar
+.searchPlayer {
+	input {
+		font-family: 'FontAwesome';
+	}
+	.wrapper {
+		position:relative;
+		i {
+			position:relative;
+			right:-10px;
+			z-index:1;
+			color:$white;
+			top:8px;
+		}
+	}
+	#search {
+		@include border-radius(8px);
+		background-color:$beige;
+		color:$white;
+		border:0;
+		padding:10px 14px;
+		position:relative;
+		text-align: center;
+
+	}
+	.inputs {
+		text-align: center;
+	}	
+}
+
+// player avatar
+.avatar {
+	width:130px;
+	height:130px;
+	img {
+		max-width:100%;
+		height:100%;
+	}
+}
+
+// chart
+#myChart {
+	float:right;
+}
+

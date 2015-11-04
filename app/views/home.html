@@ -1,24 +1,6 @@
-<form ng-submit="home.searchPlayer()" method="GET">
-	<input id="search" type="text" placeholder="Search player" ng-model="home.search"/>
-	<input type="submit" value="search" />
-</form>
-{{home.player}}
-{{home.stats}}
-<div ng-show="home.players.length > 0">
-	<div class="col-md-12">	
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Player name</th>
-					<th>Real name</th>					
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="player in home.players">
-					<td>{{player.personaname}}</td>
-					<td>{{player.realname}}</td>					
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
+<!-- search bar -->
+<search-bar></search-bar>
+<p>76561197960435530</p>
+<p>76561197972495328</p>
+<!-- player stats -->
+<player-stats></player-stats>

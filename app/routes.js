@@ -8,10 +8,7 @@ module.exports = function(app, express, router, requestify) {
 		requestify
 			.get('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=72793006155C403B2A5F7C0451CA1F29&steamids=' + req.params.id)
 			.then(function(response) {
-				data = response.getBody();
-				// console.dir(data.response.players);	
-				// res.send(data.response.players);
-				console.dir(data.response.players);
+				data = response.getBody();								
 				res.send(data.response.players);
 				next();
 			});
@@ -20,9 +17,7 @@ module.exports = function(app, express, router, requestify) {
 	router.get('/players/stats/:id', function(req, res) {
 		requestify
 			.get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=72793006155C403B2A5F7C0451CA1F29&steamid=' + req.params.id)
-			.then(function(response) {
-				console.dir(response);
-				console.log("second call complete!");						
+			.then(function(response) {				
 				var stats = response.getBody();
 				console.dir(stats);
 				//data.append(stats.gameName);
