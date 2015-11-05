@@ -4,20 +4,20 @@ A small web app built with AngularJS, Express, Node.js and MongoDB. Type a user 
 # instructions
 Please clone repo and do the following:
 
-1. Go to root folder with package.json file.
+Go to root folder with package.json file.
 
 `npm install`
 
-2. Mongo Restore the database files to your specified database folder (eg. /Users/User/data/db), eg:
+Mongo Restore the database files to your specified database folder (eg. /Users/User/data/db), eg:
 
 `mongorestore -d battlefy /mongodb/battlefy/dump/database/`
 
-3. Run node server through node or grunt, and make sure mongo is running.
+Run node server through node or grunt, and make sure mongo is running.
 
 `node server.js` or `grunt nodemon`
 `mongod -f /path/to/config/file`
 
-4. Go to port 8000 of your localhost.
+Go to port 8000 of your localhost.
 
 `http://localhost:8000/`
 
