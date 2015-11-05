@@ -23,7 +23,7 @@ Go to port 8000 of your localhost.
 
 # API
 
-I've constructed a small internal API to hold the most recent users viewed. Route is accessibile at:
+I've constructed a small internal API to hold the most recent users viewed. Route is accessible at:
 
 `/api/recentPlayers`
 
