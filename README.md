@@ -1,7 +1,7 @@
 # CS GO stat finder by Thomas Countoures
 A small web app built with AngularJS, Express, Node.js and MongoDB. Type a user name or steam ID into the search bar to get user statistics.
 
-# instructions
+# Instructions
 Please clone repo and do the following:
 
 Go to root folder with package.json file.
@@ -21,13 +21,13 @@ Go to port 8000 of your localhost.
 
 `http://localhost:8000/`
 
-# api
+# API
 
 I've constructed a small internal API to hold the most recent users viewed. Route is accessibile at:
 
 `/api/recentPlayers`
 
-# development screenshots
+# Development Screenshots
 
 Screenshots over the course of development. :)
 
