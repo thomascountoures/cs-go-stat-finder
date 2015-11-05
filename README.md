@@ -45,6 +45,7 @@ Screenshots over the course of development. :)
 ![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs12.png)
 ![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs13.png)
 ![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs14.png)
+![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs15.png)
 
 
 
