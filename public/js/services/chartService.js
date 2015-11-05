@@ -30,8 +30,7 @@ var ChartService = function() {
 				}				
 				dataConfig.push(obj);
 			});		
-			console.log("pie chart config");
-			console.dir(dataConfig);
+			
 			var ctx = document.getElementById("myChart").getContext("2d");
 			var myPieChart = new Chart(ctx).Pie(dataConfig, {
 				segmentShowStroke : false,
@@ -46,8 +45,7 @@ var ChartService = function() {
 	this.setKillChart = function(data) {
 
 		if(data instanceof Array) {
-			console.log("data!: ");
-			console.dir(data);
+			
 			var dataConfig     		= {},				
 				colors 		   		= ["#00FF8B", "#DC3D24"],
 				highlights 	   		= ["red", "green", "#00FF8B"],

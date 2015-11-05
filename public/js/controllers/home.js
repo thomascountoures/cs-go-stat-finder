@@ -30,14 +30,12 @@ var HomeCtrl = function(player, chart, $timeout) {
 		}
 
 		var filtered = that.recentlyViewed = removeDuplicates(response);
-		
-		console.log("filtered: ");
-		console.dir(filtered);
+				
 		
 	})
 
 	function constructPlayer() {
-		console.log(that.search.slice(0,3));		
+		
 		//get steamID first by resolving username into proper steamID.
 		//you cannot search for statistics through the steam API directly
 		//with simply a username.
@@ -72,8 +70,7 @@ var HomeCtrl = function(player, chart, $timeout) {
 					that.stats = {};
 
 					//null object
-					if(Object.keys(stats).length == 0) {
-						console.log("null object!");
+					if(Object.keys(stats).length == 0) {						
 						that.noStats = true;						
 						that.stats.message = "Sorry, this user has no data recorded.";
 					} else {
@@ -117,8 +114,7 @@ var HomeCtrl = function(player, chart, $timeout) {
 						avatar: that.players.avatarfull,
 						profile: that.players.profileurl
 					}
-					console.log("user mongo: ");
-					console.dir(user);
+					
 					player.addRecentlyViewed(user)
 					.then(function(response) {
 
