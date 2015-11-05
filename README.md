@@ -29,6 +29,8 @@ I've constructed a small internal API to hold the most recent users viewed. Rout
 
 # development screenshots
 
+Screenshots over the course of development. :)
+
 ![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs1.png)
 ![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs2.png)
 ![alt tag](https://raw.github.com/thomascountoures/project_synergy/screenshots/screenshots/cs3.png)
