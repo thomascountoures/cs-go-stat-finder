@@ -8,19 +8,13 @@ EDIT: I've removed the need to install or use MongoDB, as persistent storage isn
 
 Please clone repo and do the following:
 
-1. Go to root folder with package.json file.
-
-`npm install`
+1. Go to root folder with package.json file and do an `npm install`
 
 2. Enter your Steam API key on line 5 of routes.js
 
-3. Run node server through node or grunt from the command line.
+3. Run node server through node or grunt from the command line by doing `node server.js` or simply `grunt`
 
-`node server.js` or simply `grunt`
-
-4. Go to port 8000 of your localhost.
-
-`http://localhost:8000/`
+4. Go to port 8000 of your localhost - `http://localhost:8000/`
 
 # Development Screenshots
 
