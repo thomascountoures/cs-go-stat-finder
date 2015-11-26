@@ -1,4 +1,4 @@
-# CS:GO stat finder by Thomas Countoures
+# CSGO Trackify by Thomas Countoures
 A small web app built with AngularJS, Express, Node.js and previously, MongoDB. Type a user name or steam ID into the search bar to get user statistics. I will continue add more to this app.
 
 
