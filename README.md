@@ -1,5 +1,5 @@
 # CSGO Trackify by Thomas Countoures
-A small web app built with AngularJS, Express, Node.js and previously, MongoDB. Type a user name or steam ID into the search bar to get user statistics. I will continue add more to this app.
+A small web app built with AngularJS, Express, Node.js and previously, MongoDB. Type a user name or steam ID into the search bar to get user statistics. I will continue to add more to this app over time.
 
 
 # Instructions (Updated) - November 25, 2015
@@ -8,17 +8,17 @@ EDIT: I've removed the need to install or use MongoDB, as persistent storage isn
 
 Please clone repo and do the following:
 
-* Go to root folder with package.json file.
+1. Go to root folder with package.json file.
 
 `npm install`
 
-* Enter your Steam API key on line 5 of routes.js
+2. Enter your Steam API key on line 5 of routes.js
 
-* Run node server through node or grunt from the command line.
+3. Run node server through node or grunt from the command line.
 
 `node server.js` or simply `grunt`
 
-* Go to port 8000 of your localhost.
+4. Go to port 8000 of your localhost.
 
 `http://localhost:8000/`
 
