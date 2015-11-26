@@ -1,12 +1,15 @@
 // routes config
 module.exports = function(app, express, router, requestify) {
 
+	// ENTER YOUR STEAM API KEY HERE
+	var API_KEY = '';
+
 	// server routes ================================
 	app.use(router);
 	router.get('/players/:id', function(req, res, next) {
 		var data;
 		requestify
-			.get('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=72793006155C403B2A5F7C0451CA1F29&steamids=' + req.params.id)
+			.get('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='+ API_KEY + '&steamids=' + req.params.id)
 			.then(function(response) {				
 				data = response.getBody();								
 				res.send(data.response.players);
@@ -16,7 +19,7 @@ module.exports = function(app, express, router, requestify) {
 
 	router.get('/players/stats/:id', function(req, res) {
 		requestify
-			.get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=72793006155C403B2A5F7C0451CA1F29&steamid=' + req.params.id)
+			.get('http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=' + API_KEY + '&steamid=' + req.params.id)
 			.then(function(response) {				
 				var stats = response.getBody();
 				console.dir(stats);
@@ -36,7 +39,7 @@ module.exports = function(app, express, router, requestify) {
 
 	router.get('/getSteamID/:username', function(req, res) {
 		requestify
-			.get('http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=72793006155C403B2A5F7C0451CA1F29&vanityurl=' + req.params.username)
+			.get('http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=' + API_KEY + '&vanityurl=' + req.params.username)
 			.then(function(response) {
 				var result = response.getBody();
 				console.dir(result.response.steamid);

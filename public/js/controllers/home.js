@@ -7,35 +7,34 @@ var HomeCtrl = function(player, chart, $timeout) {
 		steamid,
 		recentlyViewed;		
 
-	player.getRecentlyViewed()
-	.then(function(response) {		
-		recentlyViewed = response;
-		var filtered = [];
+	function getRecentlyViewed() {
+		var response = player.getRecentlyViewed();
+		console.log(response);
+		that.recentlyViewed = response;
+	}
 
-		function removeDuplicates(objectsArray) {
-		    var usedObjects = {};
+	function addRecentlyViewed(user) {
+		var users = player.getRecentlyViewed();		
 
-		    for (var i=objectsArray.length - 1;i>=0;i--) {
-		        var so = JSON.stringify(objectsArray[i].name);
-
-		        if (usedObjects[so]) {
-		            objectsArray.splice(i, 1);
-
-		        } else {
-		            usedObjects[so] = true;          
-		        }
-		    }
-
-		    return objectsArray;
+		if(users.length > 0) {
+			var duplicateExists = false;
+			angular.forEach(users, function(value, key) {
+				if(value.profile == user.profile) {
+					console.log("duplicate!");
+					duplicateExists = true;
+				}				
+			});
+			if(!duplicateExists) {
+				player.addRecentlyViewed(user);
+			}			
+		} else {
+			player.addRecentlyViewed(user);
 		}
-
-		var filtered = that.recentlyViewed = removeDuplicates(response);
-				
 		
-	})
+	}
 
 	function constructPlayer() {
-		
+		getRecentlyViewed();
 		//get steamID first by resolving username into proper steamID.
 		//you cannot search for statistics through the steam API directly
 		//with simply a username.
@@ -112,13 +111,13 @@ var HomeCtrl = function(player, chart, $timeout) {
 					var user = {
 						name: that.players.personaname,
 						avatar: that.players.avatarfull,
-						profile: that.players.profileurl
+						profile: that.players.profileurl,
+						id: function() {
+							return player.recentListId++;
+						}()
 					}
 					
-					player.addRecentlyViewed(user)
-					.then(function(response) {
-
-					});
+					addRecentlyViewed(user);
 				})
 				
 			});			
@@ -130,8 +129,9 @@ var HomeCtrl = function(player, chart, $timeout) {
 	
 
 	this.constructPlayer = constructPlayer;
+	getRecentlyViewed();
 
-}
+};
 
 
 angular

@@ -4,6 +4,9 @@
 var PlayerService = function($q, $http) {
 
 	var players = this;
+
+	players.recentlyViewed = [];
+	players.recentListId = 0;
 	
 	players.resolveVanityUrl = function(username) {
 		var deferred = $q.defer();
@@ -127,33 +130,12 @@ var PlayerService = function($q, $http) {
 
 	players.addRecentlyViewed = function(user) {
 		// send back user object and save in database
-		var deferred = $q.defer();				
-		
-		$http
-		.post('/api/recentPlayers', user)
-		.success(function(response) {
-			deferred.resolve(response);
-		}, function(err, status) {
-			deferred.reject(err);
-		});
-
-
-		return deferred.promise;
-
+		players.recentlyViewed.push(user);
+		return players.recentlyViewed;
 	};
 
 	players.getRecentlyViewed = function() {
-		var deferred = $q.defer();
-
-		$http
-		.get('/api/recentPlayers')
-		.success(function(response) {			
-			deferred.resolve(response);
-		}, function(err, status) {
-			deferred.reject(err);
-		});
-
-		return deferred.promise;
+		return players.recentlyViewed;
 	}
 
 	return players;
