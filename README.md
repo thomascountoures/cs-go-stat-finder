@@ -4,7 +4,7 @@ A small web app built with AngularJS, Express, Node.js and previously, MongoDB. 
 
 # Instructions (Updated) - November 25, 2015
 
-EDIT: I've removed the need to install or use MongoDB, as persistent storage isn't necessary for this. The recent players are now saved in the Player Service through Angular on the client side.
+EDIT: I've removed the need to install or use MongoDB, as persistent storage isn't necessary for this. The recent players are now saved in the Player Service through Angular on the client side. You will need to obtain a Steam API key from `https://steamcommunity.com/dev/apikey`.
 
 Please clone repo and do the following:
 
