@@ -10,7 +10,7 @@ Please clone repo and do the following:
 
 1. Go to root folder with package.json file and do an `npm install`
 
-2. Enter your Steam API key on line 5 of routes.js
+2. Enter your Steam API key on line 5 of `app/routes.js`
 
 3. Run node server through node or grunt from the command line by doing `node server.js` or simply `grunt`
 
